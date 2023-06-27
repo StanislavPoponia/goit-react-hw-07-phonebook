@@ -1,0 +1,29 @@
+.ContactsList__name {
+    display: inline-block;
+    font-size: 20px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+  }
+  .ContactsList__number {
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .ContactsList__btn {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+  
+    font-size: 14px;
+    padding: 5px 10px;
+  
+    cursor: pointer;
+  
+    
+  }
+
+  .ContactsList__btn:hover{
+    background-color: rgb(221, 152, 253);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }

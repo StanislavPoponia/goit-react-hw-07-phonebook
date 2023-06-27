@@ -1,0 +1,30 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    width: 200px;
+  }
+
+  
+  .Form__input {
+    display: block;
+    border: 1px solid #8d8d8d;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .Form__btn {
+    border: 1px solid #919191;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 8px 10px;
+     cursor: pointer;
+  }
+  .Form__btn:hover {
+    background-color: rgb(221, 152, 253);
+  }

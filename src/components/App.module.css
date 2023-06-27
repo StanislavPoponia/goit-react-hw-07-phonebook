@@ -1,0 +1,9 @@
+#root{
+    margin-top: 150px;
+    display: flex;
+    flexDirection: column;
+    justifyContent: center;
+    alignItems: center;
+    fontSize: 40;
+    color: #010101;
+  }
