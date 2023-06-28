@@ -5,6 +5,9 @@ import { Component } from 'react';
 import { ContactForm } from './Form/Form';
 import { ContactsList } from './ContactsList/ContactsList';
 import { Filter } from './Filter/Filter';
+
+
+
 export class App extends Component {
   state = {
     contacts: [
@@ -16,6 +19,29 @@ export class App extends Component {
     filter: '',
   };
 
+  
+  
+  componentDidMount() {
+    const phoneContacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(phoneContacts);
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { contacts } = this.state;
+
+    if (prevState.contacts !== contacts) {
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+    }
+  }
+
+
+
+ 
+ 
   handlerChangeFilter = e => {
     this.setState({
       filter: e.target.value,

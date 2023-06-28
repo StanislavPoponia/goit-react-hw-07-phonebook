@@ -1,6 +1,6 @@
 import css from './ContactsItem.module.css';
 import PropTypes from 'prop-types';
-export const ContactsItems = ({ name, number, onDelete }) => {
+export const ContactsItems = ({ id, name, number, onDelete }) => {
   return (
     <>
       <p className={css.ContactsList__name}>{name}: </p>
