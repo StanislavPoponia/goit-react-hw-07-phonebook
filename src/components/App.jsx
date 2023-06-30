@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from './Form/Form';
 import ContactList from './ContactsList/ContactsList';
 import Filter from './Filter/Filter';
+import Notiflix from 'notiflix';
 
 const App = () => {
   const [parsedContacts, setContacts] = useState(() => {
@@ -32,7 +33,7 @@ const App = () => {
       const id = nanoid();
       setContacts([...parsedContacts, { ...contact, id }]);
     } else {
-      alert(`${name} is already in contacts.`);
+      Notiflix.Notify.warning(`${name} is already in contacts.`);
     }
   };
 

@@ -25,6 +25,7 @@
     font-size: 14px;
     padding: 8px 10px;
      cursor: pointer;
+     margin-bottom: 30px;
   }
   .btn:hover {
     background-color: rgb(221, 152, 253);
