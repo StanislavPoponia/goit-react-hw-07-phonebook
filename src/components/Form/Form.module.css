@@ -9,22 +9,23 @@
   }
 
   
-  .Form__input {
+  .input {
     display: block;
     border: 1px solid #8d8d8d;
     border-radius: 4px;
     padding: 5px;
     cursor: pointer;
     outline: none;
+     margin-bottom: 10px;
   }
   
-  .Form__btn {
+  .btn {
     border: 1px solid #919191;
     border-radius: 4px;
     font-size: 14px;
     padding: 8px 10px;
      cursor: pointer;
   }
-  .Form__btn:hover {
+  .btn:hover {
     background-color: rgb(221, 152, 253);
   }
