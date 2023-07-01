@@ -24,12 +24,12 @@ const App = () => {
 
   const addContact = contact => {
     const { name } = contact;
-    const lowerCaseName = name.toLowerCase();
-    const isNameUnique = !parsedContacts.some(
-      existingContact => existingContact.name.toLowerCase() === lowerCaseName
+    const lowerName = name.toLowerCase();
+    const isInclude = !parsedContacts.some(
+     contact => contact.name.toLowerCase() === lowerName
     );
 
-    if (isNameUnique) {
+    if (isInclude) {
       const id = nanoid();
       setContacts([...parsedContacts, { ...contact, id }]);
     } else {
@@ -41,7 +41,7 @@ const App = () => {
     setContacts(parsedContacts.filter(contact => contact.id !== id));
   };
 
-  const filteredContacts = parsedContacts
+  const filterList = parsedContacts
     ? parsedContacts.filter(
         contact =>
           contact.name &&
@@ -52,11 +52,11 @@ const App = () => {
   return (
     <div className={css.container}>
       <h1>Phonebook</h1>
-      <ContactForm onAddContact={addContact} />
+      <ContactForm addContact={addContact} />
       <h2>Contacts</h2>
       <Filter filter={filter} onFilter={filterContacts} />
       <ContactList
-        contacts={filteredContacts}
+        contacts={filterList}
         onDeleteContact={deleteContact}
       />
     </div>
