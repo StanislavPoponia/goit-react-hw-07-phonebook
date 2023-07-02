@@ -9,8 +9,8 @@ import Notiflix from 'notiflix';
 const App = () => {
   const [parsedContacts, setContacts] = useState(() => {
     const contacts = localStorage.getItem('contacts');
-    const parsedContacts = contacts ? JSON.parse(contacts) : [];
-    return parsedContacts;
+    return contacts ? JSON.parse(contacts) : [];
+   
   });
   const [filter, setFilter] = useState('');
 
@@ -25,11 +25,11 @@ const App = () => {
   const addContact = contact => {
     const { name } = contact;
     const lowerName = name.toLowerCase();
-    const isInclude = !parsedContacts.some(
+    const notInclude = parsedContacts.some(
      contact => contact.name.toLowerCase() === lowerName
     );
 
-    if (isInclude) {
+    if (!notInclude) {
       const id = nanoid();
       setContacts([...parsedContacts, { ...contact, id }]);
     } else {
@@ -41,13 +41,8 @@ const App = () => {
     setContacts(parsedContacts.filter(contact => contact.id !== id));
   };
 
-  const filterList = parsedContacts
-    ? parsedContacts.filter(
-        contact =>
-          contact.name &&
-          contact.name.toLowerCase().includes(filter.toLowerCase())
-      )
-    : [];
+  const filterList = parsedContacts.filter( contact => contact.name.toLowerCase().includes(filter.toLowerCase()))
+
 
   return (
     <div className={css.container}>
