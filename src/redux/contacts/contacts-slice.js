@@ -8,10 +8,10 @@ const contactsSlice = createSlice({
   reducers: {
     addContact: {
       reducer: (store, { payload }) => {
-        const isContactExist = store.find(
+        const contactFind = store.find(
           contact => contact.name.toLowerCase() === payload.name.toLowerCase()
         );
-        if (isContactExist) {
+        if (contactFind) {
           Notiflix.Notify.warning(`User with name ${payload.name} is already in contacts`);
           return;
         }
