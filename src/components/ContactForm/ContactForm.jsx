@@ -4,6 +4,8 @@ import { addContact } from 'redux/contacts/contacts-slice';
 import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import Notiflix from 'notiflix';
+
+
 const ContactForm = () => {
   const dispatch = useDispatch();
 
@@ -30,7 +32,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
-      <label className={css.label}>
+      <label >
         Name
       </label>
       <input
@@ -43,7 +45,7 @@ const ContactForm = () => {
         value={name}
         onChange={event => setName(event.target.value)}
       />
-      <label className={css.label}>
+      <label >
         Number
       </label>
       <input

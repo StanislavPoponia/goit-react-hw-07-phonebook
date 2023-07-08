@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -11,7 +12,7 @@ const contactsSlice = createSlice({
           contact => contact.name.toLowerCase() === payload.name.toLowerCase()
         );
         if (isContactExist) {
-          alert(`User with name ${payload.name} is already in contacts`);
+          Notiflix.Notify.warning(`User with name ${payload.name} is already in contacts`);
           return;
         }
 
