@@ -25,7 +25,7 @@ const App = () => {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && <b>Loading</b>}
       {error && error}
       <ContactsList />
     </div>
